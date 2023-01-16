@@ -1,6 +1,6 @@
 const { body, validationResult } = require('express-validator')
 const logger = require('../lib/logger')
-const User = require('../models/User')
+const User = require('../Models/User')
 
 module.exports = [
     body('email')

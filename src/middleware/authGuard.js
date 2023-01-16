@@ -1,5 +1,5 @@
 const { verify } = require('jsonwebtoken')
-const User = require('../models/User')
+const User = require('../Models/User')
 const throwError = require('../utils/throwError')
 
 module.exports = async (req, res, next) => {
