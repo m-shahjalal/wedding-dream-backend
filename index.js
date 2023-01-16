@@ -4,7 +4,7 @@ const cors = require('cors')
 const mongoose = require('mongoose')
 const logger = require('./src/lib/logger')
 const routes = require('./src/routes')
-const morganMiddleware = require('./src/Middleware/morgan')
+const morganMiddleware = require('./src/middleware/morgan')
 
 const app = express()
 app.use(cors())
