@@ -3,7 +3,7 @@ const { model, Schema } = require('mongoose')
 const bookingSchema = new Schema({
     brideName: { type: String, required: true },
     groomName: { type: String, required: true },
-    time: { type: Date, required: true },
+    time: { type: String, required: true },
     contact: { type: String, required: true },
     email: { type: String, default: '' },
     venueDetails: { type: String, required: true },

@@ -5,6 +5,7 @@ const testimonial = require("./testimonial");
 const package = require("./package");
 const cover = require("./coverImage");
 const admin = require("./admin");
+const booking = require("./booking");
 
 const routes = [
     {
@@ -30,6 +31,10 @@ const routes = [
     {
         path: "/cover",
         router: cover,
+    },
+    {
+        path: "/booking",
+        router: booking,
     },
     {
         path: "/admin",
