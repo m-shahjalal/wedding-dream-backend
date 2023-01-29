@@ -205,7 +205,7 @@ admin.deleteTestimonial = async (req, res, next) => {
 
 admin.getBooking = async (req, res, next) => {
     try {
-        const booking = await Booking.find({ _id: req.params.id });
+        const booking = await Booking.find();
         res.status(200).json({ success: true, data: booking });
     } catch (error) {
         next(error);
