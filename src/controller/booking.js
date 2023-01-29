@@ -18,8 +18,6 @@ booking.addBooking = async (req, res, next) => {
             accountNumber,
         } = req.body;
 
-        console.log(req.body)
-
         const booking = await Booking.create({
             brideName,
             groomName,
