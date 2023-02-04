@@ -4,6 +4,8 @@ const bookingSchema = new Schema({
     brideName: { type: String, required: true },
     groomName: { type: String, required: true },
     time: { type: String, required: true },
+    eventDate: { type: String, required: true },
+    packageId: { type: String, required: true },
     contact: { type: String, required: true },
     email: { type: String, default: '' },
     venueDetails: { type: String, required: true },

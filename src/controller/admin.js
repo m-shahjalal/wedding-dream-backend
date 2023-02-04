@@ -218,6 +218,8 @@ admin.addBooking = async (req, res, next) => {
             brideName,
             groomName,
             time,
+            eventDate,
+            packageId,
             contact,
             email,
             venueDetails,
@@ -233,14 +235,16 @@ admin.addBooking = async (req, res, next) => {
             "You got new message from your website"
         );
 
-        if(!mail){
-            return res.status(400).json({success: false, message: "Something went wrong"})
+        if (!mail) {
+            return res.status(400).json({ success: false, message: "Something went wrong" })
         }
 
         const booking = await Booking.create({
             brideName,
             groomName,
             time,
+            eventDate,
+            packageId,
             contact,
             email,
             venueDetails,
@@ -304,7 +308,7 @@ admin.updateAbout = async (req, res, next) => {
 admin.getCoverImage = async (req, res, next) => {
     try {
         const coverImage = await CoverImage.find();
-        
+
         res.status(200).json({ success: true, data: coverImage.reverse() });
     } catch (error) {
         next(error);
@@ -316,7 +320,7 @@ admin.addCoverImage = async (req, res, next) => {
     try {
         const count = await CoverImage.countDocuments();
         const coverImage = await CoverImage.create({
-            serial : count + 1,
+            serial: count + 1,
             title,
             subtitle,
             image,
