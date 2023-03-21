@@ -18,7 +18,7 @@ const coverImageSchema = new Schema({
             type: String,
         },
     ],
-});
+}, { timestamps: true });
 
 const CoverImage = model("CoverImage", coverImageSchema);
 module.exports = CoverImage;

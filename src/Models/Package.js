@@ -11,7 +11,7 @@ const packageSchema = new Schema({
     printedPicture: { type: Number, default: 0 },
     trailerLength: { type: Number, default: 0 },
     category: { type: String, required: true }
-})
+}, { timestamps: true })
 
 const Package = model('Package', packageSchema)
 module.exports = Package

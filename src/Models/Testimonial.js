@@ -5,7 +5,7 @@ const testimonialSchema = new Schema({
     text: { type: String, trim: true },
     image: String
 
-})
+}, { timestamps: true })
 
 const Testimonial = model('Testimonial', testimonialSchema)
 module.exports = Testimonial
