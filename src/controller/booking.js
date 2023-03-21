@@ -1,4 +1,4 @@
-const Booking = require('../Models/Booking');
+const Booking = require("../Models/Booking");
 
 const booking = {};
 
@@ -11,4 +11,4 @@ booking.addBooking = async (req, res, next) => {
     }
 };
 
-module.exports = booking;
+module.exports = booking
