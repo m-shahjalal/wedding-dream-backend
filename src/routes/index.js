@@ -20,7 +20,7 @@ const routes = [
     {
         path: "/video",
         router: video,
-    }
+    },
     {
         path: "/team",
         router: team,
