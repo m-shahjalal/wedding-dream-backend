@@ -7,7 +7,7 @@ const memberSchema = new Schema({
     Social: {
         facebook: String, linkedIn: String, Instagram: String, portfolio: String, twitter: String
     }
-})
+}, { timestamps: true })
 
 const Team = model('Team', memberSchema)
 module.exports = Team

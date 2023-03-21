@@ -11,7 +11,7 @@ const aboutSchema = new Schema({
     facebook: { type: String, trim: true },
     instagram: { type: String, trim: true },
     youtube: { type: String, trim: true },
-});
+}, { timestamps: true });
 
 const About = model("About", aboutSchema);
 module.exports = About;
