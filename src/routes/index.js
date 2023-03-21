@@ -7,6 +7,7 @@ const cover = require("./coverImage");
 const admin = require("./admin");
 const booking = require("./booking");
 const video = require("./video");
+const quote = require("./quote");
 
 const routes = [
     {
@@ -40,6 +41,10 @@ const routes = [
     {
         path: "/booking",
         router: booking,
+    },
+    {
+        path: "/quote",
+        router: quote,
     },
     {
         path: "/admin",
