@@ -270,6 +270,7 @@ admin.addBooking = async (req, res, next) => {
             advanceAmount,
             transactionID,
             accountNumber,
+            coverImage,
         } = req.body;
 
         const mail = sendMail(
@@ -293,6 +294,7 @@ admin.addBooking = async (req, res, next) => {
             advanceAmount,
             transactionID,
             accountNumber,
+            coverImage,
         });
         res.status(200).json({ success: true, data: booking });
     } catch (error) {
