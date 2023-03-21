@@ -6,7 +6,7 @@ const package = require("./package");
 const cover = require("./coverImage");
 const admin = require("./admin");
 const booking = require("./booking");
-const video = require("../controller/video");
+const video = require("./video");
 
 const routes = [
     {
