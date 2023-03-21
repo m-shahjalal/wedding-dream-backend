@@ -120,7 +120,7 @@ admin.deleteGallery = async (req, res, next) => {
 
 admin.addVideoGallery = async (req, res, next) => {
     try {
-        const { name, title } = req.body;
+        const { title, link } = req.body;
         const gallery = await Video.create({ title, link });
         res.status(200).json({ success: true, data: gallery });
     } catch (error) {
