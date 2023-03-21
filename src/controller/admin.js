@@ -5,6 +5,7 @@ const Gallery = require("../Models/Gallery");
 const Package = require("../Models/Package");
 const Team = require("../Models/Team");
 const Testimonial = require("../Models/Testimonial");
+const Video = require("../Models/Vidoe");
 const sendMail = require("../service/sendmail");
 const admin = {};
 
@@ -115,6 +116,48 @@ admin.deleteGallery = async (req, res, next) => {
         next(error);
     }
 };
+
+
+admin.addVideoGallery = async (req, res, next) => {
+    try {
+        const { name, title } = req.body;
+        const gallery = await Video.create({ title, link });
+        res.status(200).json({ success: true, data: gallery });
+    } catch (error) {
+        next(error);
+    }
+}
+
+admin.getVideo = async (req, res, next) => {
+    try {
+        const gallery = await Video.find();
+        res.status(200).json({ success: true, data: gallery });
+    } catch (error) {
+        next(error);
+    }
+}
+
+admin.updateVideo = async(req, res, next) => {
+    try {
+        const gallery = await Video.updateOne(
+            { _id: req.params.id },
+            { $set: req.body },
+            { new: true }
+        );
+        res.status(200).json({ success: true, data: gallery });
+    } catch (error) {
+        next(error);
+    }
+}
+
+admin.deleteVideo = async (req, res, next) => {
+    try {
+        const gallery = await Video.deleteOne({ _id: req.params.id });
+        res.status(200).json({ success: true, data: gallery });
+    } catch (error) {
+        next(error);
+    }
+}
 
 // Team functionality
 admin.getTeam = async (req, res, next) => {
