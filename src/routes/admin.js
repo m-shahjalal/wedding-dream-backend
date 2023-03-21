@@ -44,4 +44,9 @@ router.post('/cover', adminController.addCoverImage);
 router.put('/cover/:id', adminController.updateCoverImage);
 router.delete('/cover/:id', adminController.deleteCoverImage);
 
+router.get('/quote', adminController.getQuote);
+router.post('/quote', adminController.addQuote);
+router.put('/quote/:id', adminController.updateQuote);
+router.delete('/quote/:id', adminController.deleteQuote);
+
 module.exports = router;

@@ -3,6 +3,7 @@ const Booking = require("../Models/Booking");
 const CoverImage = require("../Models/CoverImage");
 const Gallery = require("../Models/Gallery");
 const Package = require("../Models/Package");
+const Quote = require("../Models/Quote");
 const Team = require("../Models/Team");
 const Testimonial = require("../Models/Testimonial");
 const Video = require("../Models/Vidoe");
@@ -391,6 +392,47 @@ admin.deleteCoverImage = async (req, res, next) => {
         next(error);
     }
 };
+
+admin.addQuote = async(req, res, next) => {
+    try {
+        const { text, author, image } = req.body;
+        const quote = await Quote.create({ text, author, image });
+        res.status(200).json({ success: true, data: quote });
+    } catch (error) {
+        next(error);
+    }
+}
+
+admin.getQuote = async(req, res, next) => {
+    try {
+        const quote = await Quote.find();
+        res.status(200).json({ success: true, data: quote });
+    } catch (error) {
+        next(error);
+    }
+}
+
+admin.updateQuote = async(req, res, next) => {
+    try {
+        const quote = await Quote.updateOne(
+            { _id: req.params.id },
+            { $set: req.body },
+            { new: true }
+        );
+        res.status(200).json({ success: true, data: quote });
+    } catch (error) {
+        next(error);
+    }
+}
+
+admin.deleteQuote = async(req, res, next) => {
+    try {
+        const quote = await Quote.deleteOne({ _id: req.params.id });
+        res.status(200).json({ success: true, data: quote });
+    } catch (error) {
+        next(error);
+    }
+}
 
 
 module.exports = admin;
