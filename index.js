@@ -8,7 +8,7 @@ const morganMiddleware = require('./src/middleware/morgan')
 
 const app = express()
 app.use(cors())
-app.use(express.json({limit: '200mb'}))
+app.use(express.json({ limit: '200mb' }))
 app.use(morganMiddleware)
 app.get('/', (_req, res) => res.json({ message: 'Hello World!' }))
 routes(app)
