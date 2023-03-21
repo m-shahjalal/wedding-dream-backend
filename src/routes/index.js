@@ -6,6 +6,7 @@ const package = require("./package");
 const cover = require("./coverImage");
 const admin = require("./admin");
 const booking = require("./booking");
+const video = require("./video");
 
 const routes = [
     {
@@ -15,6 +16,10 @@ const routes = [
     {
         path: "/gallery",
         router: gallery,
+    },
+    {
+        path: "/video",
+        router: video,
     },
     {
         path: "/team",

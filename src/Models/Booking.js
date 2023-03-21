@@ -13,7 +13,12 @@ const bookingSchema = new Schema({
     packageAmount: { type: Number, default: 0 },
     advanceAmount: { type: Number, default: 0 },
     transactionID: { type: String, default: '' },
-    accountNumber: { type: String, required: true }
+    accountNumber: { type: String, required: true },
+    eventDate: {type: String, required: true},
+    email: { type: String, default: '' },
+    venueDetails: { type: String, required: true },
+
+
 }, { timestamps: true })
 
 const Booking = model('Booking', bookingSchema)
