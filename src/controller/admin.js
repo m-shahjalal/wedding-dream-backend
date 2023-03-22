@@ -31,6 +31,7 @@ admin.addPackage = async (req, res, next) => {
             printedPicture,
             trailerLength,
             category,
+            coverImage
         } = req.body;
 
         const package = await Package.create({
@@ -44,6 +45,7 @@ admin.addPackage = async (req, res, next) => {
             printedPicture,
             trailerLength,
             category,
+            coverImage
         });
         res.status(201).json({
             success: true,
@@ -270,7 +272,6 @@ admin.addBooking = async (req, res, next) => {
             advanceAmount,
             transactionID,
             accountNumber,
-            coverImage,
         } = req.body;
 
         const mail = sendMail(
@@ -294,7 +295,6 @@ admin.addBooking = async (req, res, next) => {
             advanceAmount,
             transactionID,
             accountNumber,
-            coverImage,
         });
         res.status(200).json({ success: true, data: booking });
     } catch (error) {
