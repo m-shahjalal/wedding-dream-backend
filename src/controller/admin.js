@@ -140,7 +140,7 @@ admin.getVideo = async (req, res, next) => {
     }
 }
 
-admin.updateVideo = async(req, res, next) => {
+admin.updateVideo = async (req, res, next) => {
     try {
         const gallery = await Video.updateOne(
             { _id: req.params.id },
@@ -272,6 +272,7 @@ admin.addBooking = async (req, res, next) => {
             packageName,
             packageAmount,
             advanceAmount,
+            discountAmount,
             transactionID,
             accountNumber,
         } = req.body;
@@ -297,6 +298,7 @@ admin.addBooking = async (req, res, next) => {
             packageName,
             packageAmount,
             advanceAmount,
+            discountAmount,
             transactionID,
             accountNumber,
         });
@@ -307,8 +309,10 @@ admin.addBooking = async (req, res, next) => {
 };
 
 admin.updateBooking = async (req, res, next) => {
+    console.log(req.body)
     try {
         const booking = await Booking.updateOne(
+
             { _id: req.params.id },
             { $set: req.body },
             { new: true }
@@ -399,7 +403,7 @@ admin.deleteCoverImage = async (req, res, next) => {
     }
 };
 
-admin.addQuote = async(req, res, next) => {
+admin.addQuote = async (req, res, next) => {
     try {
         const { text, author, image } = req.body;
         const quote = await Quote.create({ text, author, image });
@@ -409,7 +413,7 @@ admin.addQuote = async(req, res, next) => {
     }
 }
 
-admin.getQuote = async(req, res, next) => {
+admin.getQuote = async (req, res, next) => {
     try {
         const quote = await Quote.find();
         res.status(200).json({ success: true, data: quote });
@@ -418,7 +422,7 @@ admin.getQuote = async(req, res, next) => {
     }
 }
 
-admin.updateQuote = async(req, res, next) => {
+admin.updateQuote = async (req, res, next) => {
     try {
         const quote = await Quote.updateOne(
             { _id: req.params.id },
@@ -431,7 +435,7 @@ admin.updateQuote = async(req, res, next) => {
     }
 }
 
-admin.deleteQuote = async(req, res, next) => {
+admin.deleteQuote = async (req, res, next) => {
     try {
         const quote = await Quote.deleteOne({ _id: req.params.id });
         res.status(200).json({ success: true, data: quote });

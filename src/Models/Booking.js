@@ -1,6 +1,7 @@
 const { model, Schema } = require('mongoose')
 
 const bookingSchema = new Schema({
+    clientID: { type: Number, default: 0 },
     brideName: { type: String, required: true },
     groomName: { type: String, required: true },
     time: { type: String, required: true },
@@ -12,9 +13,10 @@ const bookingSchema = new Schema({
     packageName: { type: String, required: true },
     packageAmount: { type: Number, default: 0 },
     advanceAmount: { type: Number, default: 0 },
+    discountAmount: { type: Number, default: 0 },
     transactionID: { type: String, default: '' },
     accountNumber: { type: String, required: true },
-    eventDate: {type: String, required: true},
+    eventDate: { type: String, required: true },
     email: { type: String, default: '' },
     venueDetails: { type: String, required: true },
 
