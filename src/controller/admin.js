@@ -31,7 +31,7 @@ admin.addPackage = async (req, res, next) => {
             printedPicture,
             trailerLength,
             category,
-            sajjadSajuAvailable,
+            // sajjadSajuAvailable,
             coverImage
         } = req.body;
 
@@ -46,7 +46,7 @@ admin.addPackage = async (req, res, next) => {
             printedPicture,
             trailerLength,
             category,
-            sajjadSajuAvailable,
+            // sajjadSajuAvailable,
             coverImage
         });
         res.status(201).json({

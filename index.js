@@ -5,7 +5,8 @@ const mongoose = require('mongoose')
 const logger = require('./src/lib/logger')
 const routes = require('./src/routes')
 
-const imagemin = require('imagemin');
+// const imagemin = require('imagemin');
+const imagemin = require('imagemin').default;
 
 const morganMiddleware = require('./src/middleware/morgan')
 
