@@ -4,6 +4,9 @@ const cors = require('cors')
 const mongoose = require('mongoose')
 const logger = require('./src/lib/logger')
 const routes = require('./src/routes')
+
+const imagemin = require('imagemin');
+
 const morganMiddleware = require('./src/middleware/morgan')
 
 const app = express()

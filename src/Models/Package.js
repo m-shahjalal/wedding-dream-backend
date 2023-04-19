@@ -10,8 +10,9 @@ const packageSchema = new Schema(
         price: { type: Number, default: 0 },
         duration: { type: Number, default: 0 },
         printedPicture: { type: Number, default: 0 },
-        trailerLength: { type: Number, default: 0 },
+        trailerLength: { type: String, default: 0 },
         category: { type: String, required: true },
+        sajjadSajuAvailable: { type: String, default: 0 },
         coverImage: { type: String, required: true },
     },
     { timestamps: true }

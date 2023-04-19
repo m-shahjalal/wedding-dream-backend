@@ -31,6 +31,7 @@ admin.addPackage = async (req, res, next) => {
             printedPicture,
             trailerLength,
             category,
+            sajjadSajuAvailable,
             coverImage
         } = req.body;
 
@@ -45,6 +46,7 @@ admin.addPackage = async (req, res, next) => {
             printedPicture,
             trailerLength,
             category,
+            sajjadSajuAvailable,
             coverImage
         });
         res.status(201).json({
@@ -309,10 +311,8 @@ admin.addBooking = async (req, res, next) => {
 };
 
 admin.updateBooking = async (req, res, next) => {
-    console.log(req.body)
     try {
         const booking = await Booking.updateOne(
-
             { _id: req.params.id },
             { $set: req.body },
             { new: true }
