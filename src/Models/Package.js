@@ -12,7 +12,7 @@ const packageSchema = new Schema(
         printedPicture: { type: Number, default: 0 },
         trailerLength: { type: String, default: 0 },
         category: { type: String, required: true },
-        // sajjadSajuAvailable: { type: String, default: 0 },
+        sajjadSajuAvailable: { type: String, default: 0 },
         coverImage: { type: String, required: true },
     },
     { timestamps: true }
