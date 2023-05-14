@@ -4,7 +4,7 @@ const memberSchema = new Schema({
     name: { type: String, required: true, trim: true },
     designation: { type: String, default: 'Photographer', trim: true },
     image: { type: String, required: true },
-    Social: {
+    social: {
         facebook: String, linkedIn: String, Instagram: String, twitter: String
     }
 }, { timestamps: true })
