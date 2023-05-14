@@ -177,6 +177,7 @@ admin.getTeam = async (req, res, next) => {
 admin.addTeam = async (req, res, next) => {
     try {
         const { name, designation, image, social } = req.body;
+        console.log(req.body)
         const team = await Team.create({ name, designation, image, social });
         res.status(200).json({ success: true, data: team });
     } catch (error) {

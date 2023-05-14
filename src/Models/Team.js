@@ -5,7 +5,7 @@ const memberSchema = new Schema({
     designation: { type: String, default: 'Photographer', trim: true },
     image: { type: String, required: true },
     social: {
-        facebook: String, linkedIn: String, Instagram: String, twitter: String
+        facebook: String, linkedIn: String, instagram: String, twitter: String
     }
 }, { timestamps: true })
 
